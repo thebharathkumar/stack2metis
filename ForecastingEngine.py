@@ -158,7 +158,7 @@ class FinancialModeling:
     
     def get_sheets_data(self,companyname):
         try:
-            files_path = r"/Users/joshna/Metis/ForecastingEngine/Financials"
+            files_path = r"/Users/joshna/Desktop/Metis/Financials"
             filepath = os.path.join(files_path, f"{companyname} Financials.xlsx")
             file_path = r""+filepath
             excel_workbook = pd.ExcelFile(file_path)
@@ -533,7 +533,7 @@ class FinancialModeling:
             for i, df in enumerate(trend1):
                 last_date = next_index.date()
                 last_value = df['trend'].iloc[-5]
-                new_dates = pd.date_range(start=last_date, periods=24, freq='Q')
+                new_dates = pd.date_range(start=last_date, periods=24, freq='QE')
                 r = np.exp(np.log(1 + (last_value - df['trend'].iloc[-6]) / last_value) / 20)
                 
                 sequence = [last_value]
@@ -664,7 +664,7 @@ class FinancialModeling:
             ]
             # Define the company name
             company_name = self.company_name
-            directory = '/Users/joshna/Metis/ForecastingEngine/Models/'
+            directory = '/Users/joshna/Desktop/Metis/Models/'
             # Initialize an empty dictionary to store the models
             models_dict = {}
             
@@ -695,7 +695,7 @@ class FinancialModeling:
             
             # Define the company name
             company_name = self.company_name
-            directory = '/Users/joshna/Metis/ForecastingEngine/Models/'
+            directory = '/Users/joshna/Desktop/Metis/Models/'
             # Initialize an empty dictionary to store the models
             models_dict = {}
             
@@ -1189,5 +1189,3 @@ class FinancialModeling:
             self.evaluation = evaluation
         except:
             raise ValueError(f"Data for is not available.")
-#forecastingengine=FinancialModeling("CCA",["Intel Corp","Advanced Micro Devices Inc"])
-#forecastingengine.return_cca()
