@@ -695,7 +695,7 @@ class FinancialModeling:
             
             # Define the company name
             company_name = self.company_name
-            directory = '/Users/joshna/Desktop/Metis/Models3/'
+            directory = '/Users/joshna/Desktop/Metis/Models/'
             # Initialize an empty dictionary to store the models
             models_dict = {}
             
